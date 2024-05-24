@@ -54,18 +54,7 @@ class EstudanteGUI:
         self.tree.bind("<Double-1>", self.editar_estudante)
 
 
-    def ler_nota(self):
-        while True:
-            try:
-                nota = float(input(''))
-                if 0 <= nota <= 10:
-                    return nota
-                else:
-                    print("Digite uma nota válida (0 a 10).")
-            except ValueError:
-                messagebox.showerror("Digite um número válido.")
-
-
+    
     def adicionar_estudante(self):
         def ler_nota(nota_str):
             try:
@@ -75,6 +64,7 @@ class EstudanteGUI:
                 else:
                     raise ValueError("Nota fora do intervalo válido")
             except ValueError:
+                
                 return None
         nome = self.entry_nome.get()
         nota1_str = self.entry_nota1.get()
